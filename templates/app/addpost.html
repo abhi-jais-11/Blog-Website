@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% block content %} 
+
+<section class="p-2">
+    <div class="container ">
+       <div class="col-lg-12 shadow-sm bg-white p-5">
+        <div class="d-flex justify-content-between mb-5 align-items-center ">
+            <h3>
+                Add A New Blog Post Here ..
+            </h3>
+            <a href="/totalpost/" class="primary-btn">Total Post</a>
+        </div>
+        <form  action="/add-post/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}        
+            <input type="submit" value="Add Post" class="primary-btn mt-4">
+        </form>
+       </div>
+    </div>
+</section>
+
+{% endblock %}

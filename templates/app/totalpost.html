@@ -1,0 +1,64 @@
+{% extends 'app/base.html' %} {% block content %}
+
+<section class="p-2">
+  <div class="container">
+   <div class="d-flex justify-content-between align-items-center">
+    <h2 class="py-4 text-center">Posts List</h2>
+    <a href="/add-post/" class="primary-btn">
+        Add Post
+    </a>
+   </div>
+    <div class="table-responsive border-0">
+      <table class="table border text-center table-bordered table-hover">
+        <div>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col ">Body</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date</th>
+            <th scope="col">Like</th>
+            <th scope="col">Action</th>
+          </tr>
+        </div>
+        <div>
+          {% for post in posts %}
+          <tr>
+            <td>{{post.id}}</td>
+            <td>
+              <img
+                src="{{post.image.url}}"
+                alt=""
+                width="80px"
+                height="80px"
+                class="img-fluid object-cover"
+              />
+            </td>
+            <td>{{post.title}}</td>
+            <td>{{post.author}}</td>
+            <td>{{post.body|slice:":50"}}</td>
+            <td>{{post.category}}</td>
+            <td>{{post.create_at}}</td>
+            <td>{{post.like}}</td>
+            <td class="d-flex gap-2">
+              <a
+                href="/edit-post/{{post.id}}"
+                class="btn btn-sm p-2 btn-primary"
+              >
+                <i class="fa fa-edit"></i>
+              </a>
+              <a href="/delete-post/{{post.id}}" class="btn btn-sm p-2 btn-danger">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </div>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

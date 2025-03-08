@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %} {% block content %}
+<section class="login_section pb-5 mb-5" style="background-color: aliceblue">
+  <div class="container pb-5">
+    <div class="row">
+      <div
+        class="col-lg-5 col-10 shadow-lg bg-white mx-auto mt-5 p-0 rounded-2 overflow-hidden"
+      >
+        <h4 class="py-3 text-center bg-color text-white fs-1">Register</h4>
+        <form action="/register/" method="POST" class="px-5 py-4">
+          {% csrf_token %} 
+          {{form}}
+          <div class="form-goup btn-wrap mt-4">
+            <input type="submit" value="Rgister" class="primary-btn px-4 w-100" />
+            <p class="mt-3 text-center">
+            Alredy have an account ? <a href="/login/">Login</a>
+            </p>
+          </div>
+          {% for e in form.fields.errors %} 
+               {{e}}
+           {% endfor %}
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

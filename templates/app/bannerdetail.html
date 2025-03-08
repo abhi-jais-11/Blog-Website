@@ -1,0 +1,66 @@
+{% extends 'app/base.html' %}
+
+
+{% block content %}
+<section class="blog-detail-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 blog-datail bg-white shadow-sm pb-5 rounded-2">
+          <hgroup class="blog-detail-header px-lg-5 py-lg-3">
+            <p class="fw-bold">
+              {{banner.category}} |
+              <span class="date light-gray"> {{banner.create_at}}</span>
+            </p>
+            <h3 class="mb-3">
+              {{banner.title}}
+            </h3>
+          </hgroup>
+          <figure>
+            <img
+              src="{{banner.image.url}}"
+              alt=""
+              class="img-fluid banner-img"
+            />
+          </figure>
+          <div class="blog-detail-body px-lg-5 py-lg-3">
+            <p class="start">
+              {{banner.body}}
+            </p>
+            <p>
+              {{banner.body}}
+            </p>
+            <div class="quate px-3 py-2 m-lg-5">
+              <big class="big">
+                <q>
+                  <em>
+                    {{banner.title}}
+                  </em>
+                </q>
+              </big>
+              <small>
+                <em>
+                    <strong>- {{banner.author}}</strong>
+                </em>
+              </small>
+            </div>
+            <p>
+                {{banner.body}}
+            </p>
+            <figure>
+                <img
+                  src="{{banner.image.url}}"
+                  alt=""
+                  class="img-fluid banner-img"
+                />
+              </figure>
+            <p>
+              {{banner.body}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock  %}
+    

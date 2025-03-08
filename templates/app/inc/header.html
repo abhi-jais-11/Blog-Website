@@ -1,0 +1,52 @@
+<!-- navbar -->
+{% load static %}
+<nav class="nav">
+  <div class="container nav-container">
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <img src="{% static 'img/logo.png' %}  " alt="" class="img-fluid" />
+        <span class="logo-text">Abhi's</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <ul class="menu">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog/">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">Category</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">Contact</a>
+        </li>
+      </ul>
+      <div class="btn-container">
+        {% if user.is_authenticated %}
+        <div class="primary-btn drop-btn">
+          {{user.username|upper}}
+          <div class="drop-content bg-white pt-2">
+            <li class="nav-item">
+              <a href="/add-post/" class="nav-link drop-link">Add Post</a>
+            </li>
+            <li class="nav-item">
+              <a href="/profile/name" class="nav-link drop-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout/" class="nav-link drop-link">Logout</a>
+            </li>
+          </div>
+        </div>
+        {% else %}
+        <a class="primary-btn" href="/register/">Register</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- navbar -->

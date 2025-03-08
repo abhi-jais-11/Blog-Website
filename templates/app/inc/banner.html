@@ -1,0 +1,28 @@
+<!-- banner -->
+{% load static %}
+
+<section class="banner-section" id="banner">
+    <div class="container rounded-2">
+      <figure>
+        <img src="{{banner.image.url}}" alt="" class="img-fluid banner-img" />
+      </figure>
+      <div class="row justify-content-end">
+        <div class="col-lg-9 col-12 box-shadow p-4 pb-5 rounded-3 me-lg-2 mt-n">
+          <h6 class="mb-3 big-p">
+            {{banner.category}}|
+            <span class="date light-gray">{{banner.create_at}}</span>
+          </h6>
+          <h4 class="banner-heading">
+            {{banner.title}}
+          </h4>
+          <p class="big-p py-2 mb-4 banner-para light-gray">
+            {{banner.body}}
+          </p>
+          <a href="/banner/{{banner.id}}" type="button" class="outline-primary-btn"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+  
