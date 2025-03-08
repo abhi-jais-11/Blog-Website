@@ -1,5 +1,6 @@
 {% extends 'app/base.html' %}
 
+{% load static %}
 
 {% block content %}
 <section class="blog-detail-section">
@@ -57,46 +58,62 @@
               {{post.body}}
             </p>
           </div>
-        </div>
-      </div>
 
-      <!-- popular post -->
-      <section class="popular-post mt-lg-5" id="popular">
-        <div class="container">
-          <!-- section title -->
-          <div
-            class="title-wrapper mb-5 d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <h3>Popular Posts</h3>
-            </div>
-            <div>
-              <a href="#" type="button" class="primary-btn">View All </a>
-            </div>
-          </div>
-          <!-- popular posts -->
-          <div class="row gy-5" id="popular-post">
-            <div class="col-lg-4 col-12 p-2">
-              <div class="card border-0  mb-5">
-                <img class="img-fluid w-100" src="{{popular.image.url}}" alt="Card image cap" />
-                <div class="card-body px-0">
-                  <p class="fw-bold m-0 mb-2" style="font-size: 14px">
-                    {{popular.category}} |
-                    <span class="date light-gray">{{popular.author}}</span>
-                  </p>
-                  <h6>{{popular.title|slice:":28"}}..</h6>
-                  <p class="small-p light-gray" style="font-size: 15px">
-                    {{popular.body|slice:":90"}}...
-                  </p>
-                  <a href="/detail/{{post.id}}" type="button" class="read-more"
-                    >Read More</a
+          <div class="px-lg-5 py-lg-3">
+            <hgroup>
+              <h4 class="mb-5"><i class="fa fa-comments me-3 primary-text"></i>Comments</h4>
+            </hgroup>
+            {% if comments %}
+            <div class="commets-container">
+              
+              {% for cmt in comments %}
+              <div class="d-flex align-items-center gap-3">
+                <div>
+                  <img src="{% static 'img/user.png'%}" alt="" 
+                  style="width: 40px; height: 40px; border-radius: 50%;"
+                  class="bg-white p-2 box-shadow-sm"
                   >
                 </div>
+                <div>
+                  <span class="primary-text ">{{cmt.name}}</span> | <span class="text-muted">{{cmt.create_at}}</span>
+                </div>
               </div>
+              <div class="px-5 ms-4 mt-2 ">
+                <p class="text-secondary">
+                  {{cmt.body}}
+                </p>
+                <div class="d-flex gap-3 mb-3" style="font-size: .8rem;">
+                    <a href="" class="primary-text">Reply</a>
+                    <a href="" class="text-dark">Like</a>
+                </div>
+              </div>
+              
+              {% endfor %}
+                
+              
             </div>
+
+            {% comment %} <div class="reply-container ps-5 ms-5 mt-4">
+              <div class="d-flex align-items-center gap-3">
+                <div>
+                  <img src="{% static 'img/user.png'%}" alt="" 
+                  style="width: 50px; height: 50px; border-radius: 50%;"
+                  class="bg-white p-2 box-shadow-sm"
+                  >
+                </div>
+                <div>
+                  <span class="primary-text fs-5">Johnson</span> | <span>Feb,8 2025</span>
+                </div>
+              </div>
+            </div> {% endcomment %}
+    
+            {% else %}
+              <p class="ps-5"> No comments on this post ..</p>
+            {% endif %}
           </div>
+
         </div>
-      </section>
+      </div>
     </div>
   </section>
 

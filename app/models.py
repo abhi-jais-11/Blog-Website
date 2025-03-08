@@ -13,6 +13,38 @@ class PostModel(models.Model):
     
     def __str__(self):
         return self.title
+    
+    
+    
+    
+    
+class CommentModel(models.Model):
+    post=models.ForeignKey(PostModel,on_delete=models.CASCADE)
+    name=models.CharField(max_length=255)
+    body=models.TextField()
+    create_at=models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Comment On :{self.post}"
+
+
+
+
+class ReplyModel(models.Model):
+    comment=models.ForeignKey(CommentModel,on_delete=models.CASCADE)
+    name=models.CharField(max_length=255)
+    body=models.TextField()
+    create_at=models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Reply On :{self.comment}"
+
+    
+    
+    
+    
+    
+
 
 class BannerModel(models.Model):
     title=models.CharField(max_length=80)
@@ -26,6 +58,8 @@ class BannerModel(models.Model):
     
     def __str__(self):
         return self.title
+
+
 
 
 

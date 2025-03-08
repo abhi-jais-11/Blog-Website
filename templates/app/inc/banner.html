@@ -9,14 +9,14 @@
       <div class="row justify-content-end">
         <div class="col-lg-9 col-12 box-shadow p-4 pb-5 rounded-3 me-lg-2 mt-n">
           <h6 class="mb-3 big-p">
-            {{banner.category}}|
+            {{banner.category}} |
             <span class="date light-gray">{{banner.create_at}}</span>
           </h6>
           <h4 class="banner-heading">
             {{banner.title}}
           </h4>
           <p class="big-p py-2 mb-4 banner-para light-gray">
-            {{banner.body}}
+            {{banner.body|slice:":300"}}...
           </p>
           <a href="/banner/{{banner.id}}" type="button" class="outline-primary-btn"
             >Read More</a

@@ -14,7 +14,6 @@ urlpatterns = [
     path('add-post/',AddPostView,name="addpost"),
     path('edit-post/<int:pk>',EditPostView,name="editpost"),
     path('profile/<str:name>',ProfileView,name="profile"),
-    path('edit-profile/<str:name>',EditProfileView,name="editprofile"),
     path('delete-post/<int:id>',DeletePostView,name="deletepost"),
-    # path('delete-profile/<str:name>'),
+    path('delete-profile/<str:name>',DeleteProfileView,name="deleteprofile"),
 ]

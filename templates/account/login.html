@@ -1,35 +1,5 @@
 {% extends 'app/base.html' %}
 
-
-{% comment %} {% block style %}
-<style>
-    .login_section{
-        background-image:url("./img/banner.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 100px 0 !important;
-    }
-    .bg-primary{
-
-        background-color: var(--primary) !important;
-        color: var(--white);
-    }
-    .form-control{
-        border-radius: 0;
-        padding: 8px 12px;
-        box-shadow: none !important;
-    }
-    .form-control:focus{
-        border-color: var(--primary);
-    }
-    .btn-wrap{
-        margin-top: 35px;
-    }
-</style>
-{% endblock  %}
-     {% endcomment %}
-
 {% block content %}
 <section class="login_section  pb-5 mb-5" style="background-color:aliceblue;">
     <div class="container  pb-5">
@@ -42,12 +12,7 @@
                    <div class="form-goup  btn-wrap mt-4 ">
                     <input type="submit" value="Login" class="primary-btn px-4 w-100">
                     <p class="mt-3 text-center">Don't have an account ? <a href="/register/">Register</a></p>
-                   </div>
-                   
-                   {% for e in form.fields.errors %}
-                        {{e}}
-                   {% endfor %}
-                    
+                   </div> 
                 </form>
             </div>
         </div>

@@ -9,33 +9,6 @@
       </a>
     </div>
     <div class="nav-links">
-      <ul class="menu">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-        <li class="nav-item">
-          <div class="drop-btn">
-            <a>Category</a>
-            <div class="drop-content bg-white pt-2">
-              
-              {% for cat in cats %}
-                  <a href="/category/{{cat.category|lower}}" class="nav-link drop-link text-capitalize">{{cat.category}}</a>
-              {% endfor %}
-                
-                
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about/">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact/">Contact</a>
-        </li>
-      </ul>
       <div class="btn-container">
         {% if user.is_authenticated %}
         <div class="primary-btn drop-btn">

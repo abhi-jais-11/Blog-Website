@@ -1,4 +1,4 @@
-{% extends 'app/base.html' %} {% block content %}
+{% extends 'app/userbase.html' %} {% block content %}
 
 <section class="p-2">
   <div class="container">
@@ -24,6 +24,8 @@
           </tr>
         </div>
         <div>
+          
+          {% if posts %}
           {% for post in posts %}
           <tr>
             <td>{{post.id}}</td>
@@ -55,6 +57,13 @@
             </td>
           </tr>
           {% endfor %}
+          {% else %}
+          <tr>
+            <p class="text-warning">You Don't Have Any Post ..Make A New Post Click on Add Post</p>
+          </tr>
+          {% endif %}
+            
+         
         </div>
       </table>
     </div>
