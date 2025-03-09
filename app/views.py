@@ -24,7 +24,21 @@ def BlogView(request):
 
 def BlogDetailView(request, id):
     postDetail, comments, replys, cat = BlogDetailData(id)
-    context = {"post": postDetail, "cats": cat, "comments": comments, "replys": replys}
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(f"/detail/{id}")
+
+    form = CommentForm()
+    context = {
+        "post": postDetail,
+        "cats": cat,
+        "comments": comments,
+        "replys": replys,
+        "form": form,
+    }
     return render(request, "app/detail.html", context)
 
 
@@ -117,3 +131,7 @@ def DeleteProfileView(request, name):
     user = get_object_or_404(User, username=name)
     user.delete()
     return redirect("/")
+
+
+def Handler404View(request, exeption):
+    return render(request, "404.html", status=404)

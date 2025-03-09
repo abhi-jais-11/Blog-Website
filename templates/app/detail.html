@@ -1,121 +1,102 @@
-{% extends 'app/base.html' %}
-
-{% load static %}
-
-{% block content %}
+{% extends 'app/base.html' %} {% load static %} {% block content %}
 <section class="blog-detail-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 blog-datail bg-white shadow-sm pb-5 rounded-2">
-          <hgroup class="blog-detail-header px-lg-5 py-lg-3">
-            <p class="fw-bold">
-              {{post.category}} |
-              <span class="date light-gray"> {{post.create_at}}</span>
-            </p>
-            <h3 class="mb-3">
-              {{post.title}}
-            </h3>
-          </hgroup>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 blog-datail bg-white shadow-sm pb-5 rounded-2">
+        <hgroup class="blog-detail-header px-lg-5 py-lg-3">
+          <p class="fw-bold">
+            {{post.category}} |
+            <span class="date light-gray"> {{post.create_at}}</span>
+          </p>
+          <h3 class="mb-3">{{post.title}}</h3>
+        </hgroup>
+        <figure>
+          <img src="{{post.image.url}}" alt="" class="img-fluid banner-img" />
+        </figure>
+        <div class="blog-detail-body px-lg-5 py-lg-3">
+          <p class="start">{{post.body}}</p>
+          <p>{{post.body}}</p>
+          <div class="quate px-3 py-2 m-lg-5">
+            <big class="big">
+              <q>
+                <em> {{post.title}} </em>
+              </q>
+            </big>
+            <small>
+              <em>
+                <strong>- {{post.author}}</strong>
+              </em>
+            </small>
+          </div>
+          <p>{{post.body}}</p>
           <figure>
-            <img
-              src="{{post.image.url}}"
-              alt=""
-              class="img-fluid banner-img"
-            />
+            <img src="{{post.image.url}}" alt="" class="img-fluid banner-img" />
           </figure>
-          <div class="blog-detail-body px-lg-5 py-lg-3">
-            <p class="start">
-              {{post.body}}
-            </p>
-            <p>
-              {{post.body}}
-            </p>
-            <div class="quate px-3 py-2 m-lg-5">
-              <big class="big">
-                <q>
-                  <em>
-                    {{post.title}}
-                  </em>
-                </q>
-              </big>
-              <small>
-                <em>
-                    <strong>- {{post.author}}</strong>
-                </em>
-              </small>
-            </div>
-            <p>
-                {{post.body}}
-            </p>
-            <figure>
+          <p>{{post.body}}</p>
+        </div>
+
+        <div class="px-lg-5 py-lg-3">
+          <hgroup>
+            <h4 class="mb-5">
+              <i class="fa fa-comments me-3 primary-text"></i>Comments
+            </h4>
+          </hgroup>
+          {% if comments %}
+          <div class="commets-container " style="height: 200px; overflow-y: scroll;">
+            {% for cmt in comments %}
+            <div class="d-flex align-items-center gap-3">
+              <div>
                 <img
-                  src="{{post.image.url}}"
+                  src="{% static 'img/user.png' %}"
                   alt=""
-                  class="img-fluid banner-img"
-                />
-              </figure>
-            <p>
-              {{post.body}}
-            </p>
-          </div>
-
-          <div class="px-lg-5 py-lg-3">
-            <hgroup>
-              <h4 class="mb-5"><i class="fa fa-comments me-3 primary-text"></i>Comments</h4>
-            </hgroup>
-            {% if comments %}
-            <div class="commets-container">
-              
-              {% for cmt in comments %}
-              <div class="d-flex align-items-center gap-3">
-                <div>
-                  <img src="{% static 'img/user.png'%}" alt="" 
-                  style="width: 40px; height: 40px; border-radius: 50%;"
+                  style="width: 40px; height: 40px; border-radius: 50%"
                   class="bg-white p-2 box-shadow-sm"
-                  >
-                </div>
-                <div>
-                  <span class="primary-text ">{{cmt.name}}</span> | <span class="text-muted">{{cmt.create_at}}</span>
-                </div>
+                /> 
               </div>
-              <div class="px-5 ms-4 mt-2 ">
-                <p class="text-secondary">
-                  {{cmt.body}}
-                </p>
-                <div class="d-flex gap-3 mb-3" style="font-size: .8rem;">
-                    <a href="" class="primary-text">Reply</a>
-                    <a href="" class="text-dark">Like</a>
-                </div>
+              <div>
+                <span class="primary-text">{{cmt.name}}</span> |
+                <span class="text-muted">{{cmt.create_at}}</span>
               </div>
-              
-              {% endfor %}
-                
-              
+            </div>
+            <div class="px-5 ms-4 mt-2">
+              <p class="text-secondary">{{cmt.body}}</p>
+              <div class="d-flex gap-3 mb-3" style="font-size: 0.8rem">
+                <a href="" class="primary-text">Reply</a>
+                <a href="" class="text-dark">Like</a>
+              </div>
             </div>
 
-            {% comment %} <div class="reply-container ps-5 ms-5 mt-4">
-              <div class="d-flex align-items-center gap-3">
-                <div>
-                  <img src="{% static 'img/user.png'%}" alt="" 
-                  style="width: 50px; height: 50px; border-radius: 50%;"
-                  class="bg-white p-2 box-shadow-sm"
-                  >
-                </div>
-                <div>
-                  <span class="primary-text fs-5">Johnson</span> | <span>Feb,8 2025</span>
-                </div>
-              </div>
-            </div> {% endcomment %}
-    
-            {% else %}
-              <p class="ps-5"> No comments on this post ..</p>
-            {% endif %}
+            {% endfor %}
           </div>
-
+          {% else %}
+          <p class="ps-5">No comments on this post ..</p>
+          {% endif %}
+          <div class="comment-form mt-5 pt-2">
+            <h4 class="mb-4">Add Comment</h4>
+            <form
+              action="/detail/{{post.id}}"
+              method="POST"
+              class="py-3 box-shadow-sm px-4"
+            >
+              {% csrf_token %}
+              <div class="d-none">
+                <select name="post" required id="id_post">
+                  <option value="{{post.id}}" selected>{{post.title}}</option>
+                </select>
+              </div>
+              <div>{{form.name.label_tag}} {{form.name}}</div>
+              <div class="form-group mt-4">
+                {{form.body.label_tag}} {{form.body}}
+              </div>
+              <div class="mt-5">
+                <input type="submit" value="Add Post" class="primary-btn" />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-{% endblock  %}
-    
+{% endblock %}

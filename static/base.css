@@ -538,6 +538,10 @@ nav ul li a:hover {
   text-align: justify;
 }
 
+.commets-container::-webkit-scrollbar{
+  display: none !important;
+}
+
 .big {
   color: var(--dark-gay);
   line-height: 2.5rem;
@@ -852,7 +856,9 @@ input[type="text"],
 input[type="number"],
 textarea,
 input[type="number"],
-input[type="file"] ,select ,option{
+input[type="file"],
+select,
+option {
   display: block;
   width: 100%;
   padding: 0.5rem 0.75rem;
