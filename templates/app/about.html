@@ -20,80 +20,46 @@
     <div class="row py-5">
       <figure class="col-12 banner-wraper">
         <img
-          src="./img/Image Placeholder (18).png"
+          src="{{about_single.image.url}}"
           alt=""
           class="img-fluid about-banner"
         />
       </figure>
       <div class="col-12">
-        <p class="fw-bold big-p">HOW WE WORK</p>
-        <h2>I will show you how our team is working</h2>
+        <p class="fw-bold big-p"> {{about_single.title}}
+        </p>
+        <h2>{{about_single.body}}</h2>
       </div>
       <!-- card section -->
-      <div
-        class="row about-card-wrapper justify-content-lg-between justify-content-center"
-      >
-        <div class="col-lg-4 card p-0 border-0">
-          <div
-            class="card-body p-4 about-card abtc-active"
-            style="width: 22rem"
-          >
-            <h2 class="card-title text-gary">01</h2>
-            <h5>Brainstroming</h5>
-            <p class="text-gary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur quisquam cum nam. Qui explicabo, fuga officia vel esse
-              aliquid ipsum, accusamus obcaecati neque atque et.
-            </p>
-            <a href="" class="card-link">Learn More</a>
-          </div>
-        </div>
-        <div class="col-lg-4 card p-0 border-0">
+      <div class="row about-card-wrapper justify-content-lg-between justify-content-center">
+        
+        {% for card in cards %}
+        <div class="col-lg-4 p-0 border-0">
           <div class="card-body p-4 about-card" style="width: 22rem">
-            <h2 class="card-title text-gary">02</h2>
-            <h5>Analysing</h5>
+            <h2 class="card-title text-gary">0{{card.id}}</h2>
+            <h5>{{card.title}}</h5>
             <p class="text-gary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur quisquam cum nam. Qui explicabo, fuga officia vel esse
-              aliquid ipsum, accusamus obcaecati neque atque et.
+              {{card.body|slice:":350"}}...
             </p>
-            <a href="" class="card-link">Learn More</a>
           </div>
         </div>
-        <div class="col-lg-4 card p-0 border-0">
-          <div class="card-body p-4 about-card" style="width: 22rem">
-            <h2 class="card-title text-gary">03</h2>
-            <h5>News Publishing</h5>
-            <p class="text-gary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur quisquam cum nam. Qui explicabo, fuga officia vel esse
-              aliquid ipsum, accusamus obcaecati neque atque et.
-            </p>
-            <a href="" class="card-link">Learn More</a>
-          </div>
-        </div>
+
+        {% endfor %}
+          
+        
       </div>
     </div>
     <!-- strory -->
     <div class="row about-story">
       <div class="col-lg-6 col-12">
-        <h1 class="mb-5">Our Story</h1>
+        <h1 class="mb-5">{{our_story.title}}</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
+         {{our_story.body | slice:":395"}}
         </p>
       </div>
       <figure class="col-lg-6 col-12">
         <img
-          src="./img/Image Placeholder (3).png"
+          src="{{our_story.image.url}}"
           alt=""
           class="img-fluid w-75 d-block ms-lg-auto"
         />
@@ -101,28 +67,20 @@
     </div>
 
     <!-- our mission -->
-    <div class="row about-mission">
+    <div class="row about-story">
       <figure class="col-lg-6 col-12">
         <img
-          src="./img/Image Placeholder (7).png"
+          src="{{our_mission.image.url}}"
           alt=""
           class="img-fluid w-75 d-block"
         />
       </figure>
       <div class="col-lg-6 col-12">
-        <h1 class="mb-5">Our Mission</h1>
+        <h1 class="mb-5">{{our_mission.title}}</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
+         {{our_mission.body|slice:":375"}}
         </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          quisquam cum nam.
-        </p>
+        
       </div>
     </div>
   </div>

@@ -1,5 +1,4 @@
-{% extends 'app/base.html' %} {% block content %}
-{% load static %}
+{% extends 'app/base.html' %} {% block content %} {% load static %}
 <!-- hero section -->
 <section class="contact-hero" id="hero">
   <div class="container">
@@ -17,13 +16,7 @@
           <div class="col-lg-4 col-12 p-2">
             <div class="contact-info">
               <div class="icon-wrapper">
-                {% if 'conatct.pk==1' %}
-                        <i class="fas fa-location"></i>
-                {% elif 'conatct.pk==2'  %}
-                        <i class="fas fa-envelope"></i>
-                {% else %}
-                        <i class="fas fa-phone-alt"></i>
-                {% endif %}
+                <i class="{{contact.icon}}"></i>
               </div>
               <h5>{{contact.title}}</h5>
               <a href="">{{contact.contact}}</a>
@@ -39,56 +32,94 @@
 <section class="contact-section">
   <!-- banner -->
   <div class="container-fluid p-0 m-0">
-    <img src="{% static 'img/Rectangle 1086.png' %} " alt="background image" class="img-fluid" />
+    <img
+      src="{% static 'img/Rectangle 1086.png' %} "
+      alt="background image"
+      class="img-fluid"
+    />
   </div>
-  <div class="container contact-form-section" style="margin-top: -150px;">
+  <div class="container contact-form-section" style="margin-top: -150px">
     <div class="row">
       <div
         class="col-lg-8 col-11 px-5 pb-5 pt-3 bg-white shadow-lg form mx-auto"
       >
-        <h3 class="mb-4">Contact Us</h3>        
-        <form action="/contact/" method="POST" class="pt-2" >
+        <h3 class="mb-4">Contact Us</h3>
+        <form action="/contact/" method="POST" class="pt-2">
           {% csrf_token %}
           <div class="row form-group mb-4">
             <div class="col-lg-6 mb-3 mb-lg-0">
-              <label for="{{form.name.id_for_label}}" class="form-label">{{form.name.label}}</label>
-              <input type="text" class="form-control shadow-none py-2" name="{{form.name.name}}" id="{{form.name.id_for_label}}" required />
+              <label for="{{form.name.id_for_label}}" class="form-label"
+                >{{form.name.label}}</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none py-2"
+                name="{{form.name.name}}"
+                id="{{form.name.id_for_label}}"
+                required
+              />
             </div>
             <div class="col-lg-6">
-              <label for="{{form.email.id_for_label}}" class="form-label">{{form.email.label}}</label>
-              <input type="email" class="form-control shadow-none py-2" name="{{form.email.name}}" id="{{form.email.id_for_label}}" required />
+              <label for="{{form.email.id_for_label}}" class="form-label"
+                >{{form.email.label}}</label
+              >
+              <input
+                type="email"
+                class="form-control shadow-none py-2"
+                name="{{form.email.name}}"
+                id="{{form.email.id_for_label}}"
+                required
+              />
             </div>
           </div>
           <div class="row form-group mb-4">
             <div class="col-lg-6 mb-3 mb-lg-0">
-              <label for="{{form.phone.id_for_label}}" class="form-label">{{form.phone.label}}</label>
-              <input type="number" class="form-control shadow-none py-2" name="{{form.phone.name}}" id="{{form.phone.id_for_label}}" required  />
+              <label for="{{form.phone.id_for_label}}" class="form-label"
+                >{{form.phone.label}}</label
+              >
+              <input
+                type="number"
+                class="form-control shadow-none py-2"
+                name="{{form.phone.name}}"
+                id="{{form.phone.id_for_label}}"
+                required
+              />
             </div>
             <div class="col-lg-6">
-              <label for="{{form.subject.id_for_label}}" class="form-label">{{form.subject.label}}</label>
-              <input type="text" class="form-control shadow-none py-2" name="{{form.subject.name}}"  id="{{form.subject.id_for_label}}" required/>
+              <label for="{{form.subject.id_for_label}}" class="form-label"
+                >{{form.subject.label}}</label
+              >
+              <input
+                type="text"
+                class="form-control shadow-none py-2"
+                name="{{form.subject.name}}"
+                id="{{form.subject.id_for_label}}"
+                required
+              />
             </div>
           </div>
           <div class="row form-group mb-5">
             <div class="col-lg-12">
-              <label for="{{form.message.id_for_label}}" class="form-label" >{{form.message.label}}</label>
+              <label for="{{form.message.id_for_label}}" class="form-label"
+                >{{form.message.label}}</label
+              >
               <textarea
                 class="form-control shadow-none py-2"
                 name="{{form.message.name}}"
                 id="{{form.message.id_for_label}}"
-                cols="40" rows="5"
+                cols="40"
+                rows="5"
                 required
               ></textarea>
             </div>
           </div>
-          <div class="col-lg-12 ">
-             <input type="submit" value="Send Message" class="primary-btn">
+          <div class="col-lg-12">
+            <input type="submit" value="Send Message" class="primary-btn" />
           </div>
-        </form> 
+        </form>
       </div>
     </div>
   </div>
-  
 </section>
 
 {% include 'app/inc/subscribe.html' %} {% endblock %}

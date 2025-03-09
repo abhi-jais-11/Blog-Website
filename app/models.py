@@ -61,10 +61,28 @@ class BannerModel(models.Model):
 
 
 
+class AboutUs(models.Model):
+    title=models.CharField(max_length=200)
+    body=models.TextField()
+    image=models.ImageField(upload_to='media/', null=True, blank=True)
+    
+    def __str__(self):
+        return self.title
+    
+
+class AboutList(models.Model):
+    title=models.CharField(max_length=200)
+    body=models.TextField()
+    
+    def __str__(self):
+        return self.title
+    
+
 
 
 class ConatactList(models.Model):
     title=models.CharField(max_length=200)
+    icon=models.CharField(max_length=200,default="")
     contact=models.CharField(max_length=325)
     url=models.CharField(max_length=500)
     
