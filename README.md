@@ -20,7 +20,7 @@ Ensure you have the following installed:
 ### Steps to Install
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/blog-website.git
+   git clone https://github.com/abhi-jais-11/Blog-Website.git
    cd blog-website
    ```
 
@@ -71,5 +71,5 @@ blog-website/
 
 ## Contact
 For inquiries, feel free to reach out:
-- Email: your-email@example.com
-- GitHub: [yourusername](https://github.com/abhi-jais-11)
+- Email: abhijais0110@gmail.com
+- GitHub: [abhi-jais-11](https://github.com/abhi-jais-11)
