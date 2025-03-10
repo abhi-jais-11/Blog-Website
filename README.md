@@ -62,6 +62,7 @@ blog-website/
 │-- manage.py
 │-- .env/
 │-- app/ (Main application)
+│-- core/ (Core settings and utilities)
 │-- templates/ (HTML templates)
 │-- static/ (CSS, JS, Images)
 │-- db.sqlite3
