@@ -1,9 +1,9 @@
-{% extends 'app/base.html' %} {% block content %} {% load static %}
-<section class="p-5">
+{% extends 'app/userbase.html' %} {% block content %} {% load static %}
+<section class="p-lg-5  ">
   <div class="container">
     <div
-      class="col-lg-7 card col-11 shadow-sm border boredr-primary mx-auto overflow-hidden"
-    >
+      class="col-lg-7 card col-12 shadow-sm border boredr-primary mx-lg-auto overflow-hidden "
+    >  
       <div
         class="card-header p-0 m-0 bg-inherit bg-white border-0 d-flex justify-content-center py-2 mb-3"
       >
@@ -20,16 +20,16 @@
                 {% csrf_token %}
                 {% for fields in form %}
                 <div class="col-12 col-lg-6">
-                   <div class="col-11 mb-5 mx-auto">
+                   <div class="col-11 mb-lg-5 mb-4 mx-auto">
                     {{fields.label_tag}}
                     {{fields}}
                    </div>
                 </div>
                 {% endfor %}
             </div>
-            <div class="d-flex justify-content-start gap-5  pb-3 ps-3 ">
-                <input type="submit" value="Save Change " class="primary-btn w-50">
-                <a href="/delete-profile/{{username}}"  class=" outline-primary-btn">Delete profile</a>
+            <div class="d-flex justify-content-start  flex-lg-row flex-column gap-lg-5  gap-3 pb-3 ps-3 ">
+                <input type="submit" value="Save Change " class="primary-btn w-lg-50">
+                <a href="/delete-profile/{{username}}"  class=" outline-primary-btn text-center">Delete profile</a>
             </div>
         </form>
       </div>

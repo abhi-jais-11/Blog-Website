@@ -8,18 +8,37 @@ from .db_query import *
 
 def HomeView(request):
     posts, banner, cat = HomeData()
+    post=PopularData()
+    print(post)
     context = {
         "posts": posts,
         "banner": banner,
         "cats": cat,
+        'popular_posts':post
     }
     return render(request, "app/home.html", context)
 
 
 def BlogView(request):
     posts, banner, cat = BlogData()
-    context = {"posts": posts, "banner": banner, "cats": cat}
+    post=PopularData()
+    context = {"posts": posts, "banner": banner, "cats": cat,'popular_posts':post}
     return render(request, "app/blog.html", context)
+
+
+
+def CategoryView(request,category):
+    post,cat ,category = CategoryData(category)
+
+    context={
+        'cats':cat,
+        'posts':post,
+        'category':category
+    }
+
+    return render(request,'app/category.html',context)
+
+
 
 
 def BlogDetailView(request, id):
@@ -40,6 +59,7 @@ def BlogDetailView(request, id):
         "form": form,
     }
     return render(request, "app/detail.html", context)
+
 
 
 def BannerDetailView(request):

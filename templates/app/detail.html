@@ -34,7 +34,7 @@
           </figure>
           <p>{{post.body}}</p>
         </div>
-
+        {% if user.is_authenticated %}
         <div class="px-lg-5 py-lg-3">
           <hgroup>
             <h4 class="mb-5">
@@ -94,6 +94,11 @@
             </form>
           </div>
         </div>
+        {% endif %}
+          
+        
+
+
       </div>
     </div>
   </div>

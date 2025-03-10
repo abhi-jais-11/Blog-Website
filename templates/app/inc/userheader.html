@@ -1,17 +1,17 @@
 <!-- navbar -->
 {% load static %}
 <nav class="nav">
-  <div class="container nav-container">
+  <div class="container nav-container d-flex flex-row justify-content-between">
     <div class="logo">
       <a href="/" class="logo-link">
         <img src="{% static 'img/logo.png' %}  " alt="" class="img-fluid" />
         <span class="logo-text">Abhi's</span>
       </a>
     </div>
-    <div class="nav-links">
+    <div class="">
       <div class="btn-container">
         {% if user.is_authenticated %}
-        <div class="primary-btn drop-btn">
+        <div class="primary-btn drop-btn text-center">
           {{user.username|upper}}
           <div class="drop-content bg-white pt-2">
             <li class="nav-item">
@@ -19,6 +19,9 @@
             </li>
             <li class="nav-item">
               <a href="/profile/{{user}}" class="nav-link drop-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link drop-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="/logout/" class="nav-link drop-link">Logout</a>

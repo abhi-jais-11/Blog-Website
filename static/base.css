@@ -258,6 +258,7 @@ a {
   background-color: var(--primary);
 }
 
+
 /* 
   -----------------------------------------
           HEADERS NAVIGATION
@@ -302,6 +303,18 @@ nav ul {
 
 nav ul li {
   display: inline-block;
+}
+
+.fa-bars:hover {
+  color: #7c4ee4;
+}
+
+.btn-menu {
+  display: none;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 nav ul li a {
@@ -538,7 +551,7 @@ nav ul li a:hover {
   text-align: justify;
 }
 
-.commets-container::-webkit-scrollbar{
+.commets-container::-webkit-scrollbar {
   display: none !important;
 }
 
@@ -890,4 +903,71 @@ label {
 
 #id_email {
   margin-bottom: 20px;
+}
+
+/* 
+  -----------------------------------------
+          FOOTER SECTION
+  -----------------------------------------
+
+*/
+
+
+
+/* 
+  -----------------------------------------
+          RESPONSIVE DESIGN
+  -----------------------------------------
+
+*/
+@media screen and (max-width:780px) {
+
+  .nav-container {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .nav-links {
+    display: none;
+
+  }
+
+  .show {
+    flex-direction: column !important;
+    display: flex !important;
+    align-items: start;
+    justify-content: start;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .drop-btn {
+    width: auto !important;
+    text-align: start;
+  }
+
+  .drop-content {
+    z-index: 200;
+  }
+
+  .btn-menu {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 }

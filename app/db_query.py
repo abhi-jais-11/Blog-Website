@@ -12,6 +12,15 @@ def HomeData():
 
     return posts, banner, cat
 
+def PopularData():
+    posts=PostModel.objects.all()
+    post=[]
+    for i in posts:
+        if i.like>=100:
+            post.append(i)        
+    return post
+    
+
 
 def BannerDetailData():
     banner = BannerModel.objects.first()
@@ -26,6 +35,17 @@ def BlogData():
     cat = CatData()
 
     return post, banner, cat
+
+
+def CategoryData(category):
+    posts=PostModel.objects.all()
+    cat=CatData()
+    post=[]
+    for i in posts:
+        if i.category.lower()==category.lower():
+            post.append(i)        
+    return post,cat ,category.capitalize()
+    
 
 
 def BlogDetailData(id):

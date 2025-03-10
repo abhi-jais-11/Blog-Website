@@ -1,73 +1,96 @@
-  <!-- Footer -->
-  <footer class="bg-body-tertiary py-4">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h6 class="fs-4 mb-4">
-            <img src="./img/logo.png" alt="" class="pe-3" />Abhi's
-          </h6>
-          <p class="small-p">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-            atque ea quis molestias.
-          </p>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-center">
-          <h6 class="">Useful Links</h6>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-body">Home</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">Blog</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">About</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-center">
-          <h6 class="">Social Links</h6>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!" class="text-body">Intagram</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">Facebook</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">Whatsapp</a>
-            </li>
-            <li>
-              <a href="#!" class="text-body">Phone</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3">
-      © 2020 Copyright:
-      <a class="" style="color: var(--primary)" href="./index.html"
-        >abhi'sblogs.com</a
+<!-- Footer -->
+{% load static %}
+<footer class="bg-body-tertiary py-4">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div
+        class="col-lg-4 col-md-12 col-12 mb-4 mb-md-0 d-flex justify-content-center flex-column align-items-center align-items-lg-start"
       >
+        <h6 class="fs-4 mb-4">
+          <img src="{% static 'img/logo.png' %}" alt="" class="pe-3" />Abhi's
+        </h6>
+        <p class="small-p text-lg-start  text-center ">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque
+          ea quis molestias.
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-center">
+        <h6 class="">Useful Links</h6>
+
+        <ul class="list-unstyled mb-0 flex-column gap-2 d-flex">
+          <li>
+            <a href="/" class="text-body">
+              <i class="fas fa-home me-1"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="/blog/" class="text-body">
+              <i class="fa fa-book-open me-1"></i>
+              Blog</a
+            >
+          </li>
+          <li>
+            <a href="/about/" class="text-body">
+              <i class="fas fa-user"></i>
+              About</a
+            >
+          </li>
+          <li>
+            <a href="/contact/" class="text-body">
+              <i class="fa fa-phone"></i>
+              Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-2 mb-md-0 text-center">
+        <h6 class="">Social Links</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+          <li>
+            <a href="#!" class="text-body">
+              <i class="fab fa-instagram me-1"></i>
+              Intagram
+            </a>
+          </li>
+          <li>
+            <a href="#!" class="text-body">
+              <i class="fab fa-facebook me-1"></i> Facebook</a
+            >
+          </li>
+          <li>
+            <a href="#!" class="text-body">
+              <i class="fab fa-whatsapp me-1"></i>
+              Whatsapp</a
+            >
+          </li>
+          <li>
+            <a href="#!" class="text-body">
+              <i class="fa fa-phone"></i>
+              MobileNo
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
     </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3">
+    © 2020 Copyright:
+    <a class="" style="color: var(--primary)" href="/">abhi'sblogs.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

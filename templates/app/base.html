@@ -13,5 +13,25 @@
     {% include 'app/inc/header.html' %}
     <main>{% block content %} {% endblock %}</main>
     {% include 'app/inc/footer.html' %}
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      function navToggler(){
+        let nl=document.getElementById('nav-links');
+        nl.classList.toggle('show');
+        let btnmenu=document.getElementById('btn-menu');
+        btnmenu.classList.toggle('rotate')
+      }
+    </script>
   </body>
+
 </html>
